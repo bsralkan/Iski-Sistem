@@ -9,7 +9,7 @@
 - Server : Glassfish Server 4.1.2 
 - Database : JDBC (Java DB)
 
-## Bazı Ekran GÖrüntüleri
+## Bazı Ekran Görüntüleri
 
 - Kullanıcı giriş sayfası:
 
