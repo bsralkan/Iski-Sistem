@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+
+        <title> Anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+       
+        <style>
+  
+
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                margin-top:8%;
+
+                color:#ffffff;
+                background-color:#2f6f82;
+                text-align:center;
+
+            }
+            .link{
+                text-decoration: none;
+            }
+            .loginicon{
+                width: 100px;
+                height: 100px;
+                border-radius: 0%;
+                position: absolute;
+                top: 25px;
+                left: calc(50% - 50px);
+            }
+ 
+
+
+        </style>
+    </h:head>
+    
+    <h:body>
+        
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <div id="branding">
+                        <h1><span class="highlight"> İSKİ ABONE SİSTEMİ</span> </h1>
+                    </div>            
+            <br></br> <br></br> <br></br>
+                    <nav>
+                        <ul>
+                            <li class="current"><a href="adminIndex.xhtml">ANASAYFA</a></li> 
+                           
+                        </ul>
+                    </nav>
+                </div>
+            </header>  
+            
+  
+                <section id="showcase1" style="background: #2f6f82">
+                <div class="container" >
+                    <h3 style="color: white">Abone Dağlımları</h3>
+
+                    <h:form class="text">
+                        <h:dataTable  value="#{admin.musteriDagilimi}" var="borcCek"
+                                       styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     style="width:100%;
+                                     border-width: 3px; border-color:#add8e6;" border="3">
+                            <h:column>    				
+
+                            
+                                <f:facet name = "header">İlçe</f:facet>    
+                                <b><h:outputText value="#{borcCek.ilce}"/></b>
+                            </h:column>
+                            <h:column>
+                                <f:facet name ="header">Sayı</f:facet>
+                                <b><h:outputText  value="#{borcCek.count}"  /></b>
+                            </h:column>
+                          </h:dataTable>
+                    </h:form>
+                </div>
+
+            </section>        
+               
+
+            <h:form>
+
+                <h:graphicImage class="img" width="768" height="543" value="image/arkaplan.png"> </h:graphicImage>
+                
+            </h:form>
+            <h:outputStylesheet library="css" name="style.css"/>
+            <footer>
+                <p>iski@iski.com</p>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>

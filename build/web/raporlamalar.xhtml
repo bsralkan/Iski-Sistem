@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <title> Profil </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background: #979394;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                margin-top:20px;
+
+                color:#ffffff;
+                background-color:#979394;
+                text-align:center;
+
+            }
+            .form{
+                color: black;
+            }
+            h3{
+               text-align: left;
+               text-decoration: underline;
+               font-style: italic;
+               font-family:Verdana Italic;
+               color:black;
+               text-transform: uppercase;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <h2>RAPORLAMA</h2>
+                </div>
+            </header>
+            <br></br><br></br>
+            <section id="showcase" style="background: #979394;  ;">
+                <div class="container" >
+                    <h3>Daha önceden kiralanan Araçları markaya göre gruplar ve hangi markadan kaç tane oldugunu gösteren sorgu, 
+                        ve bu araçların sayısına göre sıralaması:</h3>
+
+                    <h:form >
+                        <h:dataTable style=" align: left ; background-color: grey; width: 40%;" value="#{rapor.address}" var="a"
+                                     styleClass = "employeeTable"
+                                     headerClass = "employeeTableHeader"
+                                     rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                            <h:column>    				
+                                <f:facet name = "header">MARKA</f:facet>    
+                                    #{a.marka}
+                            </h:column>
+
+                            <h:column>    				
+                                <f:facet name = "header">ADET</f:facet>    
+                                    #{a.sayı}
+                            </h:column>
+
+                        </h:dataTable>
+                    </h:form>
+                </div>
+                <br></br><br></br>
+                <div class="container" >
+                    <h3>Audi kiralayan musterilerimizin adı ve soyadını listeyen sorgu:</h3>
+                    <h:dataTable style="  background-color: grey; width: 40%;" value="#{rapor.add}" var="a"
+                                 styleClass = "employeeTable"
+                                 headerClass = "employeeTableHeader"
+                                 rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                        <h:column>    				
+                            <f:facet name = "header">AD</f:facet>    
+                                #{a.ad}
+                        </h:column>
+                        <h:column>    				
+                            <f:facet name = "header">SOYAD</f:facet>    
+                                #{a.soyad}
+                        </h:column>
+                    </h:dataTable>
+
+                    <h3>BMW kiralayan musterilerimizin adını ve soyadını listeleyen sorgu:</h3>
+                    <h:dataTable style="  background-color: grey; width:40%;" value="#{rapor.ad}" var="a"
+                                 styleClass = "employeeTable"
+                                 headerClass = "employeeTableHeader"
+                                 rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                        <h:column>    				
+                            <f:facet name = "header">AD</f:facet>    
+                                #{a.ad}
+                        </h:column>
+                        <h:column>    				
+                            <f:facet name = "header">SOYAD</f:facet>    
+                                #{a.soyad}
+                        </h:column>
+                    </h:dataTable>
+                    <h3>EN YUKSEK FİYATLI ARACI KİRALAYAN MUSTERIMIZın adı ve kiraladığı aracın marka ve modeli</h3>
+                     <h:dataTable style="  background-color: grey; width: 50%;   align:center;" value="#{rapor.ad1}" var="a"
+                                 styleClass = "employeeTable"
+                                 headerClass = "employeeTableHeader"
+                                 rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                        <h:column>    				
+                            <f:facet name = "header">MUSTERI ADI</f:facet>    
+                                #{a.musteri_adi}
+                        </h:column>
+                        <h:column>    				
+                            <f:facet name = "header">MARKA</f:facet>    
+                                #{a.marka}
+                        </h:column>
+                          <h:column>    				
+                            <f:facet name = "header">MODEL</f:facet>    
+                                #{a.model}
+                        </h:column>
+                    </h:dataTable>
+                    <h3> ELİFİN KİRALADIĞI ARACIN MARKA, MODEL, VE PLAKASI(PLAKA ARAÇ BILGILERI TABLOSUNDA YER ALIR) </h3>
+                    <h:form>
+
+                        <h:outputStylesheet library="css" name="style.css"/>
+                        <h:dataTable value="#{profil.addresses}" 
+                                     var="a" 
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     border="3" 
+                                     style="width:100%;
+                                     text-align: left;
+                                     background: GREY;
+                                    
+                                     ">
+
+                            <h:column>
+                                <f:facet name="header"> Plaka: </f:facet>
+                                <h:outputText value="#{a.plaka}"/>
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header"> Marka: </f:facet>
+                                <h:outputText value="#{a.marka}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Model: </f:facet>
+                                <h:outputText value="#{a.model}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Yakit: </f:facet>
+                                <h:outputText value="#{a.yakit}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Fiyat(Saat): </f:facet>
+                                <h:outputText value="#{a.saat}"/>
+                            </h:column>
+
+
+
+
+
+
+                        </h:dataTable>
+
+                    </h:form>
+                    <h3>GALERIMIZDEKI BAKIMI YAPILMAMIŞ ARAÇLARIN MARKA,MODEL VE PLAKA BILGILERINI GOSTEREN SORGU: </h3>
+                     <h:dataTable style="  align:left; background-color: grey; width: 50%;   align:center;" value="#{rapor.ad2}" var="a"
+                                 styleClass = "employeeTable"
+                                 headerClass = "employeeTableHeader"
+                                 rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                        <h:column>    				
+                            <f:facet name = "header">MARKA</f:facet>    
+                                #{a.marka}
+                        </h:column>
+                        <h:column>    				
+                            <f:facet name = "header">MODEL</f:facet>    
+                                #{a.model}
+                        </h:column>
+                          <h:column>    				
+                            <f:facet name = "header">PLAKA</f:facet>    
+                                #{a.plaka}
+                        </h:column>
+                    </h:dataTable>
+                </div>
+               
+
+            </section>
+
+
+
+
+            <footer>
+                <p>iu@rentacar.com</p>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>
+

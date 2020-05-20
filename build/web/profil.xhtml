@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <title> Profil </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+                        .liste {
+                            list-style-type: none;
+
+                            margin: 0;
+
+                            padding: 0;
+
+                            width: 200px;
+
+                            background-color: #34495e;
+                        }       
+                        
+                        .stil:hover {
+                            background-color: #f39c12;
+
+                            color: white;
+                        }
+                        
+                        .liste .stil{
+                            position:relative;
+                        }
+
+                        .stil a {
+                            display: block;
+
+                            color:white;
+
+                            padding: 8px 16px;
+
+                            text-decoration: none;
+
+                            border:1px solid silver;
+                        }
+
+                        .stil a:hover {
+
+                            background-color: #add8e6;
+
+                            color: white;
+                        }
+                        
+                        .stil:hover .liste{
+                            display:block;
+                        }
+
+
+                        .liste .stil .liste{
+                            
+                            position:absolute;
+
+                            left:200px;
+
+                            top:0;
+  
+                            display:none;
+                        }
+                        
+                        .anamenu, .altmenu {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.anamenu a{
+  display: block;
+
+  background-color:#34495e;
+
+  text-decoration: none;
+
+  padding: 10px;
+
+  color: #ffffff;
+}
+
+
+.anamenu a:hover {
+    background-color:#add8e6;
+}
+
+
+.anamenu li:hover .altmenu {
+  display: block;
+
+  max-height: 200px;
+}
+
+.altmenu a{
+  background-color:#34495e; 
+}
+
+.altmenu a:hover {
+  background-color:#add8e6;
+}
+
+.altmenu {
+  overflow: hidden;
+
+  max-height: 0;
+
+  -webkit-transition: all 0.5s ease-out;
+}
+
+                        
+		</style>
+        <style>
+            h3{
+                color:black;
+            }
+            .text{
+                color: white;
+            }
+          
+           .img{    
+               margin-top: -75px;
+               margin-bottom: -75px;
+           }
+           li {
+               text-align: left;
+               
+           }
+
+            body{
+                background: #2f6f82;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                
+                margin-top: 15%;
+                color:#ffffff;
+                background-color:#2f6f82;
+                text-align:center;
+
+            }
+            .form{
+                color: black;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <div id="branding">
+                        <h1><span class="highlight">İSKİ</span> ABONE SİSTEMİ</h1>
+                    </div>
+                    <br></br> <br></br> <br></br>
+                    <nav>
+                       <ul>
+                            <li ><a href="index.xhtml">ANASAYFA</a></li> 
+                            <li ><a href="hakkimizda.xhtml">HAKKIMIZDA</a></li> 
+                            <li><a href="iletisim.xhtml">ILETISIM</a></li>
+                            <li><a href="duyurular.xhtml">DUYURULAR</a></li>
+                            <li><a href="giris.xhtml">ÇIKIŞ YAP</a></li>					
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+              <div style="width:201px; color:#FFFFFF; position: absolute; top:165px; left:37px; right:0px;">
+                <ul class="anamenu" >
+                    
+                <li class="stil"><a href="profil.xhtml">HESABIM  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; >> </a>     
+                    <ul class="altmenu">
+                        <li><a href="odemeler.xhtml">&rarr;  &nbsp;ÖDEMELER</a></li>
+                        <li><a href="borclar.xhtml">&rarr;  &nbsp;BORÇLAR</a></li>
+                    </ul>
+                </li> 
+                <li class="stil"><a href="duyurular.xhtml">DUYURULAR</a></li>
+                
+                <li class="stil"><a href="ödemenoktaları.xhtml">ÖDEME NOKTALARI</a></li>
+
+                <li class="stil"><a href="subirimfiyatlar.xhtml">SU BİRİM FİYATLARI</a></li>
+                
+                </ul>
+            </div>
+
+            <br></br><br></br>
+
+          
+            <section id="showcase1" style="background: #2f6f82">
+                <div class="container" >
+                    <h3 style="color: white">KISI BILGILERI</h3>
+
+                    <h:form class="text">
+                        <h:dataTable  value="#{profil.address}" var="a"
+                                       styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     style="width:100%;
+                                     border-width: 3px; border-color: #add8e6;" border="1">
+
+                            <h:column>    				
+                                <f:facet name = "header">TC</f:facet>    
+                                    #{a.tc}
+                            </h:column>
+
+                            <h:column>    				
+                                <f:facet name = "header">AD</f:facet>    
+                                    #{a.ad}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name = "header">SOYAD</f:facet>
+                                    #{a.soyad}
+                            </h:column>
+                            <h:column>
+                                <f:facet name = "header">MAIL</f:facet>
+                                    #{a.mail}
+                            </h:column>
+
+
+
+                        </h:dataTable>
+                    </h:form>
+                </div>
+
+            </section>
+            
+               <br></br><br></br>
+                  
+
+         
+
+   
+                 <section id="showcase" style="background:#2f6f82;  ;">
+                   <form>
+                       
+                       
+                       <div>
+                      <nav>
+                       <u1>
+                       
+                       <li class="current" ><a href="güncelleme.xhtml" style="color:white" >
+                               <font face="tahoma" size="4" color="white">
+                                   <b>Hesap güncelleştirme</b></font></a></li>
+                       </u1><h:graphicImage class="img" width="768" height="543" value="image/arkaplan.png"> </h:graphicImage>
+                       </nav>
+                       </div>
+                       </form>
+               </section> 
+
+            <h:outputStylesheet library="css" name="style.css"/>
+            <footer>
+                <p>iski@iski.com</p>
+                <br></br>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>
+

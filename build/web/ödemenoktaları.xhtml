@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <title> Ödeme Noktaları </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+                        .liste {
+                            list-style-type: none;
+
+                            margin: 0;
+
+                            padding: 0;
+
+                            width: 200px;
+
+                            background-color: #34495e;
+                        }       
+                        
+                        .stil:hover {
+                            background-color: #f39c12;
+
+                            color: white;
+                        }
+                        
+                        .liste .stil{
+                            position:relative;
+                        }
+
+                        .stil a {
+                            display: block;
+
+                            color:white;
+
+                            padding: 8px 16px;
+
+                            text-decoration: none;
+
+                            border:1px solid silver;
+                        }
+
+                        .stil a:hover {
+
+                            background-color: #add8e6;
+
+                            color: white;
+                        }
+                        
+                        .stil:hover .liste{
+                            display:block;
+                        }
+
+
+                        .liste .stil .liste{
+                            
+                            position:absolute;
+
+                            left:200px;
+
+                            top:0;
+  
+                            display:none;
+                        }
+                        
+                        .anamenu, .altmenu {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.anamenu a{
+  display: block;
+
+  background-color:#34495e;
+
+  text-decoration: none;
+
+  padding: 10px;
+
+  color: #ffffff;
+}
+
+
+.anamenu a:hover {
+    background-color:#add8e6;
+}
+
+
+.anamenu li:hover .altmenu {
+  display: block;
+
+  max-height: 200px;
+}
+
+.altmenu a{
+  background-color:#34495e; 
+}
+
+.altmenu a:hover {
+  background-color:#add8e6;
+}
+
+.altmenu {
+  overflow: hidden;
+
+  max-height: 0;
+
+  -webkit-transition: all 0.5s ease-out;
+}
+
+                        
+		</style>
+        <style>
+
+            .outputText{
+                text-align: left;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                
+
+                color:#ffffff;
+                background-color:#2f6f82;
+                text-align:center;
+
+            }
+            .link{
+                text-decoration: none;
+            }
+            th{
+                text-align: center ; 
+            }
+         
+    
+   
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all" >
+            <header>
+
+                <div class="container">
+                    <div id="branding" >
+                        <h1><span class="highlight">İSKİ ABONE SİSTEMİ</span> </h1>
+                    </div><br></br><br></br><br></br>
+                    <nav>
+                        <ul>
+                            <li><a href="index.xhtml">ANASAYFA</a></li> 
+                            <li class="current" ><a href="hakkimizda.xhtml">HAKKIMIZDA</a></li> 
+                            <li><a href="iletisim.xhtml">ILETISIM</a></li>
+                            <li><a href="profil.xhtml">#{giris.tc}</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+             <div style="width:201px; color:#FFFFFF; position: absolute; top:165px; left:37px; right:0px;">
+                <ul class="anamenu" >
+                    
+                <li class="stil"><a href="profil.xhtml">HESABIM  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; >> </a>     
+                    <ul class="altmenu">
+                        <li><a href="odemeler.xhtml">&rarr;  &nbsp;ÖDEMELER</a></li>
+                        <li><a href="borclar.xhtml">&rarr;  &nbsp;BORÇLAR</a></li>
+                    </ul>
+                </li> 
+                <li class="stil"><a href="duyurular.xhtml">DUYURULAR</a></li>
+                
+                <li class="stil"><a href="ödemenoktaları.xhtml">ÖDEME NOKTALARI</a></li>
+
+                <li class="stil"><a href="subirimfiyatlar.xhtml">SU BİRİM FİYATLARI</a></li>
+                
+                </ul>
+            </div>
+            <br></br> <br></br> 
+           
+				<div class="row subpage-col">
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sp-leftcol sidebar-offcanvas" id="sidebar" role="navigation">
+					 
+		
+						<div class="iski-social">
+                            <a id="pageprint" href="#" target="_blank" title="Sayfayı Yazdır">
+							    <i class="fa fa-print"></i>
+						    </a>
+						    <a id="sharetwitter" href="https://twitter.com/home?status=http://www.iski.istanbul/web/tr-TR/musteri-hizmetleri/odeme-noktalari" data-fancybox-type="iframe" target="_blank" title="İSKİ Twitter">
+							    <i class="fa fa-twitter"></i>
+						    </a>
+						    <a id="sharefacebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.iski.istanbul/web/tr-TR/musteri-hizmetleri/odeme-noktalari" data-fancybox-type="iframe" target="_blank" title="İSKİ Facebook">
+							    <i class="fa fa-facebook"></i>
+						    </a>							
+						</div>    
+					</div>
+					
+
+
+           
+
+
+
+<div id="odemeNoktalariFP" class="row">
+
+    <div class="text-center">
+        
+        <h4>ANLAŞMALI KURUMLAR</h4>
+        <hr />
+        <div class="text-center">
+            <a href="#"><img src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/PTT-Logo.png" /></a>
+        </div>
+       
+    </div>
+    
+    <div class="text-center">
+        <hr />
+        <h4>ANLAŞMALI BANKALAR</h4>
+        <hr />
+
+        <div class="text-center">
+<table align="center" border="1" bordercolor="#eeeeee" cellpadding="4" cellspacing="0" width="500">
+		<tbody><tr>
+			<td align="center" bgcolor="#ffffff" height="70" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.garanti.com.tr/" target="_blank">
+                                                <img border="0" alt="Garanti Bankası Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/garanti.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı,<br></br> İnternet tahsilatı</font></font></div>
+                                        </td>
+			<td align="center" bgcolor="#ffffff" height="70" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.isbank.com.tr/" target="_blank">
+                                                <img border="0" alt="Türkiye iş bankası logo" width="123" height="35" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/isbank.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                    <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, <br></br> İnternet Tahsilatı</font></font></div>
+                                        </td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="78" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.yapikredi.com.tr/" target="_blank">
+                                                <img border="0" alt="Yapıkredi logo" width="144" height="25" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/yapikredi.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı,
+                                                        <br></br>
+                                                </font><font color="#848c73">İnternet Tahsilatı</font></font></div>
+                                        </td>
+			<td align="center" bgcolor="#ffffff" height="78" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.akbank.com.tr/" target="_blank">
+                                                <img border="0" alt="Akbank Logo" width="139" height="20" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/akbank.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">
+                                                Otomatik Ödeme Talimat</font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">ı, </font></font><font color="#848c73" size="1">
+                                                İnternet Tahsilatı</font></font></div>
+                                        </td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="82" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.halkbank.com.tr/" target="_blank">
+                                                <img border="0" alt="Halkbank logo" width="128" height="25" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/halkbank.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı,
+                                                        <br></br>
+                                                İnternet Tahsilatı </font></font></div>
+                                        </td>
+			<td align="center" bgcolor="#ffffff" height="82" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.vakifbank.com.tr/" target="_blank">
+                                                <img border="0" alt="Vakıfbank logo" height="35" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/vakifbank2.jpg"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font>
+                                                <font color="#848c73">İnternet Tahsilatı</font></font></div>
+                                        </td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="72" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.finansbank.com.tr/" target="_blank">
+                                                <img border="0" alt="Finansbank logo" width="170" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/finansbank.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı</font><font color="#848c73">,
+                                                        <br></br>
+                                                İnternet Tahsilatı
+                                                <br></br>
+                                                </font></font>
+                                            </div>
+                                        </td>
+			<td align="center" bgcolor="#ffffff" height="72" width="50%">
+                                            <div align="center">
+                                                <a href="http://www.hsbc.com.tr/" target="_blank">
+                                                <img border="0" alt="" width="115" height="25" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/hsbc.gif"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                <font color="#848c73" size="1">Otomatik Ödeme Talimatı</font></font></div>
+                                            <div align="center">
+                                                <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">
+                                                        <br></br> </font></font>
+                                            </div>
+                                        </td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="62">
+                                            <div align="center">
+                                                <a href="http://www.ingbank.com.tr/" target="_blank">
+                                                <img border="0" alt="ING Bank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/ingbank.jpg"/>
+                                                </a>
+                                                <br></br>
+                                                <font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/>
+                                                <br></br>
+                                                </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, </font><font color="#848c73">
+                                                        <br></br>
+                                                İnternet Tahsilatı </font><font face="Verdana" style="FONT-SIZE: 8pt">
+                                                <font color="#848c73">
+                                                    <br></br>
+                                               </font></font></font>
+                                            </div>
+                                        </td>
+                    <td align="center" bgcolor="#ffffff" height="70" width="50%"><div align="center"> <a href="http://www.denizbank.com.tr/" target="_blank"> <img border="0" alt="Denizbank logo" width="135" height="30" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/denizbank.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı,<br></br>
+                                </font><font color="#848c73"> İnternet Tahsilatı <br></br>
+	        </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73"> </font></font></font></div></td>
+		</tr>
+		<tr>
+                    <td align="center" bgcolor="#ffffff" height="62" width="50%"><div align="center"> <a href="http://www.odeabank.com.tr/" target="_blank"> <img border="0" alt="Citibank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/odeabank-logo.jpg"/> <br></br>
+                            </a> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1"> Otomatik Ödeme Talimatı, Vezne tahsilatı <br></br>
+                                    İnternet Tahsilatı <br></br>
+		    </font></font></div></td>
+                    <td align="center" bgcolor="#ffffff" height="62" width="50%"><div align="center"> <a href="http://www.teb.com.tr/" target="_blank"> <img border="0" alt="Teb Logo" width="75" height="40" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/teb.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                                <font color="#848c73" size="1">Otomatik Ödeme Talimatı,<br></br>
+                                </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73"></font></font></font></div></td>
+		</tr>
+		<tr>
+                    <td align="center" bgcolor="#ffffff" height="55" width="50%"><div align="center"> <a href="http://www.turkiyefinans.com.tr/" target="_blank"> <img border="0" alt="Türkiye Finans Katılım Bankası logo" width="100" height="48" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/turkiyefinans.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73"></font></font></font></div></td>
+                    <td align="center" bgcolor="#ffffff" height="55" width="50%"><div align="center"> <a href="http://www.ziraatbankasi.com.tr/" target="_blank"> <img border="0" alt="Ziraat Bankası logo" width="196" height="35" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/ziraat.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		    <font color="#848c73" size="1">Otomatik Ödeme Talimatı,  </font> </font> </div>
+                        <div align="center"> <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1"> </font><font color="#848c73">İnternet Tahsilatı<br></br>
+		    </font></font></div></td>
+		</tr>
+		<tr>
+                    <td align="center" bgcolor="#ffffff" height="67" width="50%"><div align="center"> <a href="http://www.kuveytturk.com.tr/" target="_blank"> <img border="0" alt="Kuveyt Türk logo" width="117" height="25" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/kuveytturk.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font></div></td>
+                    <td align="center" bgcolor="#ffffff" height="67" width="50%"><div align="center"> <a href="http://www.sekerbank.com.tr/" target="_blank"> <img border="0" alt="Şekerbank logo" width="134" height="30" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/sekerbank.gif"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font></div></td>
+		</tr>
+		<tr>
+                    <td align="center" bgcolor="#ffffff" height="74" width="50%"><div align="center"> <a href="http://www.anadolubank.com.tr/" target="_blank"> <img border="0" alt="Anadolu Bank Logo" width="120" height="40" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/anadolubank.gif"/> </a> <br></br>
+                            <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1"> Otomatik Ödeme Talimatı, <br></br>
+                                </font><font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font> </font></div></td>
+                    <td align="center" bgcolor="#ffffff" height="74" width="50%"><div align="center"> <a href="http://www.icbc.com.tr/" target="_blank"> <img border="0" alt="ICBC Logo" width="178" height="65" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/icbc.jpg"/> </a> <br></br>
+                            <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı,</font><font color="#848c73">&nbsp; İnternet 
+                              Tahsilatı<br></br>
+  &nbsp;</font></font></div></td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="66" width="50%"><div align="center">
+                                <p> <a href="http://www.abank.com.tr/" target="_blank"> <img border="0" alt="ABank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/abank.jpg"/> </a> <br></br>
+                                    <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1"> <br></br>
+			      Otomatik Ödeme Talimatı, Vezne Tahsilatı, İnternet Tahsilatı </font></font></p>
+		    </div></td>
+                    <td align="center" bgcolor="#ffffff" height="66" width="50%"><div align="center"> <a href="http://www.albarakaturk.com.tr/" target="_blank"> <img border="0" alt="Albaraka Türk Logo" width="185" height="40" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/albaraka.gif"/> </a> <br></br>
+                                    <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1"> Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font><font color="#848c73">İnternet 
+                                  Tahsilatı<br></br>
+		    </font> </font> </div></td>
+		</tr>
+		<tr>
+                    <td align="center" bgcolor="#ffffff" height="82" width="50%"><div align="center"> <a href="http://www.burgan.com.tr" target="_blank"> <img border="0" alt="BurganBank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/Burganbanka.gif"/> </a> <br></br>
+                                    <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                                    </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font> </div></td>
+                    <td align="center" bgcolor="#ffffff" height="82" width="50%"><div align="center"> <a href="http://www.turkishbank.com.tr/" target="_blank"> <img border="0" alt="Turkishbank logo" width="174" height="25" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/turkishbank.gif"/> </a> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font> </div></td>
+		</tr>
+		<tr>
+			<td align="center" bgcolor="#ffffff" height="90" width="50%"><div align="center"> <a href="http://www.aktifbank.com.tr/" target="_blank"> <img border="0" alt="Aktifbank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/aktifbank.gif"/> </a> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font></div></td>
+			<td align="center" bgcolor="#ffffff" height="70" width="50%"><div align="center"> <a href="http://www.fibabanka.com.tr/" target="_blank"> <img border="0" alt="Citibank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/fibabanka-logo.gif"/> </a> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font></div></td>
+		</tr>
+		<tr>
+			
+			<td align="center" bgcolor="#ffffff" height="70" width="50%"><div align="center"> <a href="http://www.ziraatkatilim.com.tr/" target="_blank"> <img border="0" alt="Citibank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/ziraat_katilim.PNG"/> </a> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font> </div></td>
+            <td align="center" bgcolor="#ffffff" height="70" width="50%"><div align="center">
+			  <p> <a href="http://www.vakifkatilim.com.tr/" target="_blank"> <img border="0" width="196" alt="Vakıf Katılım Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/vakif-katilim-yatay.jpg"/> </a> <br></br>
+			    <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		        </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, İnternet Tahsilatı</font></font><br></br>
+			    <font face="Verdana" style="FONT-SIZE: 8pt" color="#848c73"> <br></br>
+		        </font> </p>
+		    </div></td>
+		</tr>
+		<tr>
+			
+			<td align="center" bgcolor="#ffffff" height="70" width="50%"><div align="center"> <a href="http://www.emlakbank.com.tr/" target="_blank"> <img border="0" alt="Citibank Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/emlakbank.png"/> </a> <br></br>
+			  <font face="Verdana" style="FONT-SIZE: 8pt"> <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+		      </font><font face="Verdana" style="FONT-SIZE: 8pt"><font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">İnternet Tahsilatı<br></br>
+	        </font></font> </div></td>
+            <td align="center" bgcolor="#ffffff" height="70" width="50%">
+                <div align="center">
+                    <a href="https://www.turktelekom.com.tr/" target="_blank"> <img border="0" alt="Turk Telekom Logo" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/turk_telekom_logo.png"/> </a> <br></br>
+                    <font face="Verdana" style="FONT-SIZE: 8pt">
+                        <img border="0" alt="" src="https://www.iski.istanbul/web/Content/images/anlasmali-kurumlar-images/trans.gif"/> <br></br>
+                    </font><font face="Verdana" style="FONT-SIZE: 8pt">
+                        <font color="#848c73" size="1">Otomatik Ödeme Talimatı, Vezne Tahsilatı, </font> <font color="#848c73">
+                            İnternet Tahsilatı<br></br>
+                        </font>
+                    </font>
+                </div>
+            </td>            
+        </tr>
+		
+	</tbody></table>     
+            <hr />       
+        </div>
+    </div>
+</div>
+</div>
+
+        
+
+            <h:outputStylesheet library="css" name="style.css" />
+            <footer>
+                <p>iski@iski.com</p>
+            </footer>    
+</div>
+                                
+    </h:body>
+</html>

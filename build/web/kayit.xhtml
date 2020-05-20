@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <title> Kayıt </title>
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <style>
+            form{
+                background-image: url('image/arkaplan.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                             
+            }
+            .kayit{
+                margin-top: 100px;
+                border:white solid;
+                margin-right: 0px;
+                text-align: center;
+
+            }
+            .loginicon{
+                width: 100px;
+                height: 100px;
+                border-radius: 0%;
+                position: absolute;
+                top: 25px;
+                left: calc(50% - 50px);
+            } 
+          
+          
+
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <img src="image/loginicon.png" class="loginicon"></img>
+                    <h1><span class="highlight">İSKİ ABONE SİSTEMİ</span> </h1>
+                </div>
+                <nav>
+                   
+                </nav>
+            </div>
+        </header>
+        <section id="showcase">
+            <div class="container">
+                <div class="kayit">
+                    
+                        
+                        
+                    <h:form>
+                      
+                        <h:outputText value="TC: " />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <h:inputText id="tc" value="#{kayit.tc}"></h:inputText>
+                        <h:message for="tc"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="İsim: " />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <h:inputText id="ad" value="#{kayit.ad}"></h:inputText>
+                        <h:message for="ad"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="Soyisim: " />&nbsp; &nbsp; &nbsp; 
+                        <h:inputText id="soyad" value="#{kayit.soyad}"></h:inputText>
+                        <h:message for="soyad"></h:message>
+                        <br></br><br></br>
+                        
+                        <h:outputText value="Telefon: " />&nbsp; &nbsp; &nbsp; 
+                        <h:inputText id="telefon" value="#{kayit.telefon}"></h:inputText>
+                        <h:message for="telefon"></h:message>
+                        <br></br><br></br>
+                      <h:outputText value="İlçe: " />  
+                        <h:selectOneMenu value="#{kayit.ilce}" >
+                            <f:selectItem itemValue="ilçe seçiniz" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                         <f:selectItems value="#{kayit.ilceler}" ></f:selectItems>
+                      </h:selectOneMenu>
+                        <br></br><br></br>
+                        
+
+                        <h:outputText value="Mail: " />&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+                        <h:inputText id="mail" value="#{kayit.mail}"></h:inputText>
+                        <h:message for="mail"></h:message>
+                        <br></br><br></br>
+
+
+                        <h:outputText value="Sifre: " /> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+                        <h:inputSecret id="sifre" value="#{kayit.sifre}"></h:inputSecret>
+                        <h:message for="sifre"></h:message>
+                        <br></br><br></br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <h:commandButton class="button button2" action="#{kayit.kaydet}"
+                                         value="KAYIT"></h:commandButton>
+                      <br></br><br></br><br></br>
+                    </h:form>
+                </div>
+            </div>
+        </section>
+    </h:body>
+</html>
+
